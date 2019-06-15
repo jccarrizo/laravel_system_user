@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 @include('layouts.breadcrumb')
-
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-2">
@@ -14,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    {{ request()->user()->roles->first()->descripcion }}
                     You are logged in!
                 </div>
             </div>

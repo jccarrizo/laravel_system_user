@@ -9111,4 +9111,10 @@ a.text-dark:focus {
     border: 1px solid #ddd !important;
   }
 }
+.box-message{
+    position: fixed;
+    z-index:100;
+    right: 0px;
+    margin: 85px 10px 10px 10px;
+}
 

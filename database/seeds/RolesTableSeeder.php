@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Role;
 
 class RolesTableSeeder extends Seeder
 {
@@ -12,20 +12,18 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'name' => 'Admin',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        DB::table('roles')->insert([
-            'name' => 'User',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        DB::table('roles')->insert([
-            'name' => 'Guest',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
+        
+        
+        $role = new Role();
+        $role->name = 'admin';
+        $role->descripcion = 'Administrador';
+        $role->save();
+        
+        $role = new Role();
+        $role->name = 'user';
+        $role->descripcion = 'Usuario';
+        $role->save();
+        
+        
     }
 }

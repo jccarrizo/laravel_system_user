@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/LARAVEL/project_theme/resources/views/layouts/breadcrumb.blade.php</file>
-            <file>file:/D:/LARAVEL/project_theme/resources/views/welcome.blade_3.php</file>
+            <file>file:/D:/LARAVEL/project_theme/routes/web.php</file>
+            <file>file:/D:/LARAVEL/project_theme/app/Http/Controllers/AdminController.php</file>
             <file>file:/D:/LARAVEL/project_theme/resources/views/layouts/app.blade.php</file>
-            <file>file:/D:/LARAVEL/project_theme/resources/assets/js/components/ExampleComponent.vue</file>
-            <file>file:/D:/LARAVEL/project_theme/resources/views/auth/login.blade.php</file>
-            <file>file:/D:/LARAVEL/project_theme/resources/views/welcome.blade.php</file>
+            <file>file:/D:/LARAVEL/project_theme/database/seeds/RolesTableSeeder.php</file>
+            <file>file:/D:/LARAVEL/project_theme/resources/views/user/home.blade.php</file>
             <file>file:/D:/LARAVEL/project_theme/resources/views/home.blade.php</file>
+            <file>file:/D:/LARAVEL/project_theme/app/Http/Controllers/UserController.php</file>
         </group>
     </open-files>
 </project-private>

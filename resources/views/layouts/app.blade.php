@@ -33,8 +33,18 @@
 
     <body class="bg-white">
         <div id="app">
+            @if($errors->any())
+            <div class="box-message">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{$errors->first()}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            @endif
             <header class="section page-header rd-navbar-transparent-wrap">
-                
+
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <a class="navbar-brand mx-4 my-3" href="/">Laravel</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,25 +53,25 @@
 
                     <div class="collapse navbar-collapse mx-4 my-3" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
-                                <li class="nav-item"><a class="nav-link scroll" href="{{ route('home') }}">Home</a></li>
-                                @guest
-                                <li class="nav-item"><a class="nav-link scroll" href="{{ route('login') }}">Login</a></li>
-                                <li class="nav-item"><a class="nav-link scroll" href="{{ route('register') }}">Register</a></li>
-                                @else
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="{{ route('logout') }}"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                        {{ Auth::user()->name }} 
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item " href="#" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">Logout</a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </div>
-                                </li>
-                                @endif
+                            <li class="nav-item"><a class="nav-link scroll" href="{{ route('home') }}">Home</a></li>
+                            @guest
+                            <li class="nav-item"><a class="nav-link scroll" href="{{ route('login') }}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link scroll" href="{{ route('register') }}">Register</a></li>
+                            @else
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="{{ route('logout') }}"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                    {{ Auth::user()->name }} 
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item " href="#" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">Logout</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                            </li>
+                            @endif
 
-                            </ul>
+                        </ul>
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
