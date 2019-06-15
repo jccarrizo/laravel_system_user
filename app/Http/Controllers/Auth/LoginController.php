@@ -35,5 +35,18 @@ use AuthenticatesUsers;
     public function __construct(Request $request) {        
         $this->middleware('guest')->except('logout');        
     }
+    
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function authenticated(Request $request, $user) {
+        $role = ($request->user()->roles->first());
+        $paht = $role->name . '-home';
+        return redirect()->route($paht);
+    }
 
 }
